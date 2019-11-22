@@ -4,21 +4,24 @@ import './styles.css';
 import $ from 'jquery';
 import { Doctor } from './doctor';
 
-
 $(document).ready(function() {
-  // $(".formOne").submit(function (event) {
-  //   event.preventDefault();
-  //   // let query = $("#doctorInput").val();
-  //   $("#doctorInput").cal('');
-  // })
+  $('#doctorButton').click(function(event) {
+    event.preventDefault();
+    let name = $('#doctorName').val();
+    $('#doctorName').val("");
+    let medicalIssue = $('#healthInput').val();
+    $('#healthInput').val("");
 
-  (async () => {
+
     let doctor = new Doctor();
-    const response = await doctor.getDoctor();
-    let answerDoctor = getElements(response);
-    console.log(answerDoctor);
-  })();
-  const getElements = function(response) {
-    $("#doctorInput").text(`${response.data[0].practices[0].name}`);
-   };
-});
+    let promise = doctor.getDoctor(name, medicalIssue);
+    promise.then(function(response) {
+
+      let doctorProfile = JSON.parse(response);
+
+      if (doctorProfile.data.length > 0) {
+        $('.showDoctors').empty();
+
+        for(let i=0; i<doctorProfile.data.length; i++) {
+          $('.showDoctors').append
+            

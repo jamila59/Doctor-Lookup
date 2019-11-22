@@ -2,22 +2,28 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <title>Doctor Lookup</title>
+    <title>Doctor-Lookup</title>
   </head>
   <body>
     <div class="container">
-      <h1>Doctor Lookup</h1>
+      <h1>Doctor-Lookup</h1>
       <form>
-      <label for="enteredName">Search for a doctor in your area by doctor name:</label>
-      <input id="enteredName" type="text">
+      <label for="doctorName">Search for a doctor by name:</label>
+      <input id="doctorName" type="text">
       <br>
-      <label for="enteredMedicalIssue">Search for a doctor in your area by medical issue:</label>
-      <input id="enteredMedicalIssue" type="text">
-      <button id="doctorButton" class"btn-default" type="submit">Find Doctor</button>
+      <label for="healthInput">Search for a doctor by medical issue:</label>
+      <input id="healthInput" type="text">
+      <button id="doctorButton" class"btn-default" type="submit">Search</button>
     </form>
-      <div class="errors"></div>
-      <div class="showDoctors"></div>
-      <div class="showPhotos"></div>
+      <div class="errors">
+      </div>
+      <div class="showDoctors">
+        <div class="card">
+          <div class="card-title">
+
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
