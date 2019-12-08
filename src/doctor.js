@@ -9,6 +9,7 @@ export class Doctor {
           resolve(request.response);
         } else {
           reject(Error(request.statusText));
+          console.error("Failed to fetch API");
         }
       };
       request.open("GET", url, true);
